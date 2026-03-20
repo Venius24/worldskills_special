@@ -1,0 +1,11 @@
+product_id,product_name,category,ingredients,price,cost,seasonality_score,active_status,release_date
+101,Croissant au Beurre,Выпечка,"Flour, Butter, Yeast, Sugar",2.5,0.8,1.0,1,2020-01-01
+102,Pain au Chocolat,Выпечка,"Flour, Butter, Chocolate, Yeast",2.8,0.9,1.2,1,2020-01-15
+103,Baguette Tradition,Хлеб,"Flour, Water, Salt, Yeast",1.2,0.3,0.8,1,2019-05-20
+104,Brioche Nanterre,Хлеб,"Flour, Eggs, Butter, Sugar",4.5,1.5,1.1,1,2021-03-10
+105,Tarte au Citron,Тарты,"Flour, Butter, Lemon, Eggs, Sugar",4.0,1.2,1.5,1,2022-06-01
+106,Tarte aux Fraises,Тарты,"Flour, Butter, Strawberries, Cream",4.5,1.4,2.0,1,2022-05-15
+107,Eclair au Chocolat,Выпечка,"Flour, Eggs, Cream, Chocolate",3.5,1.1,1.0,1,2020-02-20
+108,Pain de Campagne,Хлеб,"Rye Flour, Wheat Flour, Water",3.0,0.8,0.9,1,2019-08-30
+109,Chouquette,Выпечка,"Flour, Eggs, Sugar, Butter",0.5,0.1,1.0,1,2021-01-05
+110,Galette des Rois,Тарты,"Puff Pastry, Almond Cream",15.0,4.0,5.0,0,2023-01-01

@@ -1,0 +1,78 @@
+=== ОТЧЕТ ПО АНАЛИЗУ ДАННЫХ ===
+
+
+<class 'pandas.DataFrame'>
+RangeIndex: 2000 entries, 0 to 1999
+Data columns (total 7 columns):
+ #   Column          Non-Null Count  Dtype  
+---  ------          --------------  -----  
+ 0   transaction_id  2000 non-null   int64  
+ 1   customer_id     2000 non-null   int64  
+ 2   date            2000 non-null   str    
+ 3   product_id      2000 non-null   int64  
+ 4   quantity        2000 non-null   int64  
+ 5   price           2000 non-null   float64
+ 6   promotion_id    1391 non-null   float64
+dtypes: float64(2), int64(4), str(1)
+memory usage: 109.5 KB
+Инфо о продажах None
+
+<class 'pandas.DataFrame'>
+RangeIndex: 10 entries, 0 to 9
+Data columns (total 9 columns):
+ #   Column             Non-Null Count  Dtype  
+---  ------             --------------  -----  
+ 0   product_id         10 non-null     int64  
+ 1   product_name       10 non-null     str    
+ 2   category           10 non-null     str    
+ 3   ingredients        10 non-null     str    
+ 4   price              10 non-null     float64
+ 5   cost               10 non-null     float64
+ 6   seasonality_score  10 non-null     float64
+ 7   active_status      10 non-null     int64  
+ 8   release_date       10 non-null     str    
+dtypes: float64(3), int64(2), str(4)
+memory usage: 852.0 bytes
+Инфо о продуктах None
+
+<class 'pandas.DataFrame'>
+RangeIndex: 200 entries, 0 to 199
+Data columns (total 15 columns):
+ #   Column              Non-Null Count  Dtype  
+---  ------              --------------  -----  
+ 0   customer_id         200 non-null    int64  
+ 1   name                200 non-null    str    
+ 2   age                 185 non-null    float64
+ 3   gender              200 non-null    str    
+ 4   zip_code            200 non-null    int64  
+ 5   email               200 non-null    str    
+ 6   phone_number        179 non-null    str    
+ 7   member_status       200 non-null    str    
+ 8   join_date           200 non-null    str    
+ 9   last_purchase_date  200 non-null    str    
+ 10  total_spend         200 non-null    float64
+ 11  avg_order_value     200 non-null    float64
+ 12  frequency           200 non-null    int64  
+ 13  preferred_category  200 non-null    str    
+ 14  churn_status        200 non-null    int64  
+dtypes: float64(3), int64(4), str(8)
+memory usage: 23.6 KB
+Инфо о покупателей None
+
+
+
+Количество ошибок в дате 10
+
+
+Негативные в квантити 13
+Негативные в квантити 11
+Негативные в квантити 13
+
+
+
+Результаты проверки в Empty DataFrame
+Columns: [transaction_id, customer_id, date, product_id, quantity, price, promotion_id]
+Index: []
+Результаты проверки в Empty DataFrame
+Columns: [transaction_id, customer_id, date, product_id, quantity, price, promotion_id]
+Index: []
