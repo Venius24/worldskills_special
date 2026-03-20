@@ -1,0 +1,50 @@
+Отчет по исследованию данных
+
+1. Типы данных
+
+Датасет: Продажи
+transaction_id      int64
+customer_id         int64
+date               object
+product_id          int64
+quantity            int64
+price             float64
+promotion_id      float64
+dtype: object
+
+Датасет: Продукты
+product_id             int64
+product_name          object
+category              object
+ingredients           object
+price                float64
+cost                 float64
+seasonality_score    float64
+active_status          int64
+release_date          object
+dtype: object
+
+Датасет: Клиенты
+customer_id             int64
+name                   object
+age                   float64
+gender                 object
+zip_code                int64
+email                  object
+phone_number           object
+member_status          object
+join_date              object
+last_purchase_date     object
+total_spend           float64
+avg_order_value       float64
+frequency               int64
+preferred_category     object
+churn_status            int64
+dtype: object
+
+2. Аномалии
+Неправильная информация в следующих датах: 10
+Отрицательные количества: 13
+Отрицательные цены: 11
+Недопустимые ID продуктов в продажах: 0
+Недопустимые ID клиентов в продажах: 0
