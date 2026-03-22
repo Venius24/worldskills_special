@@ -1,6 +1,6 @@
 customer_id,name,age,gender,zip_code,email,phone_number,member_status,join_date,last_purchase_date,total_spend,avg_order_value,frequency,preferred_category,churn_status
-1001,Customer_0,47.0,M,69005,cust0@example.com,0650966827,Silver,2022-05-22,2023-02-17,660.9,17.56,5,Хлеб,0
-1002,Customer_1,70.0,M,69001,cust1@example.com,0644343985,Basic,2022-05-30,2023-02-25,1236.84,22.95,6,Выпечка,0
+1001,Customer_0,47.0,M,69005,cust0@example.com,korean,Silver,2022-05-2,2023-02-17,660.9,17.56,5,Хлеб,0
+1002,Customer_1,70.0,M,69001,cust1@example.com,0644343985,Basic,,2023-02-25,1236.84,22.95,6,Выпечка,0
 1003,Customer_2,23.0,M,69006,cust2@example.com,0612825259,Basic,2022-03-16,2023-01-12,1257.49,37.48,9,Выпечка,0
 1004,Customer_3,55.0,M,69009,cust3@example.com,(06) 99-20-58,Basic,2022-07-03,2023-04-04,1311.04,49.75,4,Хлеб,0
 1005,Customer_4,27.0,M,69007,cust4@example.com,0629312710,Basic,2021-09-18,2023-12-13,743.74,42.83,19,Тарты,0
@@ -28,7 +28,7 @@ customer_id,name,age,gender,zip_code,email,phone_number,member_status,join_date,
 1027,Customer_26,55.0,F,69005,cust26@example.com,0617781207,Silver,2022-02-15,2023-12-15,309.31,9.72,4,Хлеб,0
 1028,Customer_27,19.0,M,69003,cust27@example.com,0696185484,Basic,2022-11-23,2023-05-11,673.95,42.62,3,Тарты,0
 1029,Customer_28,,F,69008,cust28@example.com,0649560756,Silver,2022-10-27,2023-05-28,649.36,6.44,9,Хлеб,1
-1030,Customer_29,69.0,F,69001,cust29@example.com,0628693862,Basic,2021-12-19,2023-06-27,1257.71,13.41,9,Выпечка,0
+,Customer_29,69.0,F,69001,cust29@example.com,0628693862,Basic,2021-12-19,2023-06-27,1257.71,13.41,9,Выпечка,0
 1031,Customer_30,59.0,F,69005,cust30@example.com,0652363848,Basic,2022-03-28,2023-04-24,1265.08,29.89,13,Выпечка,0
 1032,Customer_31,40.0,M,69006,cust31@example.com,0637854117,Silver,2021-12-20,2023-05-07,755.99,37.45,8,Хлеб,0
 1033,Customer_32,73.0,M,69006,cust32@example.com,,Basic,2022-06-29,2023-11-08,318.42,33.57,9,Выпечка,0

@@ -104,12 +104,13 @@ print(top_3_months[['revenue']])
 
 # --- Визуализация: Общий ежемесячный доход (Revenue) ---
 plt.figure(figsize=(10, 5))
-plt.plot(monthly_stats.index.astype(str), monthly_stats['revenue'], marker='o', color='skyblue')
+plt.plot(monthly_stats.index.astype(str), monthly_stats['revenue'], marker='o', label='Итоги', color='skyblue')
 plt.title('Ежемесячный доход (Total Revenue)', fontsize=14)
 plt.xlabel('Месяц')
 plt.ylabel('Доход (€)')
 plt.xticks(rotation=45)
-plt.grid(axis='y', linestyle='--')
+plt.grid(linestyle='-', alpha=0.3)
+plt.legend()
 plt.tight_layout()
 plt.savefig('Session1_SalesTrends_Revenue.pdf') 
 plt.close() # Закрываем график, чтобы не мешал в консоли

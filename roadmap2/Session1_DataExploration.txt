@@ -40,7 +40,7 @@ RangeIndex: 200 entries, 0 to 199
 Data columns (total 15 columns):
  #   Column              Non-Null Count  Dtype  
 ---  ------              --------------  -----  
- 0   customer_id         200 non-null    int64  
+ 0   customer_id         199 non-null    float64
  1   name                200 non-null    str    
  2   age                 185 non-null    float64
  3   gender              200 non-null    str    
@@ -48,14 +48,14 @@ Data columns (total 15 columns):
  5   email               200 non-null    str    
  6   phone_number        179 non-null    str    
  7   member_status       200 non-null    str    
- 8   join_date           200 non-null    str    
+ 8   join_date           199 non-null    str    
  9   last_purchase_date  200 non-null    str    
  10  total_spend         200 non-null    float64
  11  avg_order_value     200 non-null    float64
  12  frequency           200 non-null    int64  
  13  preferred_category  200 non-null    str    
  14  churn_status        200 non-null    int64  
-dtypes: float64(3), int64(4), str(8)
+dtypes: float64(4), int64(3), str(8)
 memory usage: 23.6 KB
 Инфо о покупателей None
 
@@ -70,9 +70,5 @@ memory usage: 23.6 KB
 
 
 
-Результаты проверки в Empty DataFrame
-Columns: [transaction_id, customer_id, date, product_id, quantity, price, promotion_id]
-Index: []
-Результаты проверки в Empty DataFrame
-Columns: [transaction_id, customer_id, date, product_id, quantity, price, promotion_id]
-Index: []
+Результаты проверки в 0
+Результаты проверки в 4
