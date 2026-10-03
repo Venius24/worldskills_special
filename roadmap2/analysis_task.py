@@ -8,6 +8,8 @@ from sklearn.metrics import mean_absolute_error
 
 import random
 
+random.seed(42)
+
 df_sales = pd.read_csv('sales_transactions.csv')
 df_products = pd.read_csv('products.csv')
 df_customers = pd.read_csv('customers.csv')
@@ -56,8 +58,7 @@ with open('Session1_DataExploration.txt', 'w', encoding='utf-8') as f:
     f.write(f'\n\n\nКоличество ошибок в дате {incorrect_dates}')
     f.write('\n\n\n')
     f.write(f'Негативные в квантити {neg_quantity}\n')
-    f.write(f'Негативные в квантити {neg_price}\n')
-    f.write(f'Негативные в квантити {neg_quantity}\n')
+    f.write(f'Негативные в цене {neg_price}\n')
     f.write('\n\n\n')
     f.write(f'Результаты проверки в {res_fin.shape[0]}\n')
     f.write(f'Результаты проверки в {res2_fin.shape[0]}\n')
@@ -70,25 +71,26 @@ def random_date():
     return f'{year}-{month:02}-{day:02}'
 
 df_customers['age'] = df_customers['age'].fillna(df_customers['age'].mean())
-df_customers['phone_number'] = df_customers['phone_number'].fillna(0)
+df_customers['phone_number'] = df_customers['phone_number'].fillna('0').astype(str)
 df_customers['phone_number'] = df_customers['phone_number'].str.replace(r'[^0-9+]', '', regex=True)
 dates = pd.to_datetime(df_customers['join_date'], errors='coerce')
 df_customers['join_date'] = [pd.to_datetime(random_date()) if pd.isnull(x) else x for x in dates]
-df_customers['last_purchase_date'] = [pd.to_datetime(random_date()) if pd.isnull(x) else x for x in dates]
-df_customers.to_csv('customers_cleared.csv')
+purchase_dates = pd.to_datetime(df_customers['last_purchase_date'], errors='coerce')
+df_customers['last_purchase_date'] = [pd.to_datetime(random_date()) if pd.isnull(x) else x for x in purchase_dates]
+df_customers.to_csv('customers_cleared.csv', index=False)
 
 df_sales['promotion_id'] =  df_sales['promotion_id'].fillna(0)
 dates = pd.to_datetime(df_sales['date'], errors='coerce')
 df_sales['date'] = [pd.to_datetime(random_date()) if pd.isnull(x) else x for x in dates]
 df_sales['quantity'] = df_sales['quantity'].abs()
 df_sales['price'] = df_sales['price'].abs()
-df_sales.to_csv('sales_transactions_cleared.csv')
+df_sales.to_csv('sales_transactions_cleared.csv', index=False)
 
 df_sales['revenue'] = df_sales['quantity'] * df_sales['price']
 df_sales['month_period'] = df_sales['date'].dt.to_period('M')
 
 sales_by_month = df_sales.groupby('month_period').agg({'revenue': 'sum', 'transaction_id': 'count'}).rename(columns={'transaction_id': 'num_transactions'})
-sales_by_month['avg_order_value'] = sales_by_month['revenue'] * sales_by_month['num_transactions']
+sales_by_month['avg_order_value'] = sales_by_month['revenue'] / sales_by_month['num_transactions']
 print(sales_by_month)
 
 print(sales_by_month.sort_values('revenue', ascending=False).head(3))
@@ -103,7 +105,7 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.legend()
 plt.savefig('Session1_SalesTrends_Revenue.pdf')
-plt.close
+plt.close()
 
 
 plt.figure(figsize=(10, 5))
@@ -116,7 +118,7 @@ plt.xticks(rotation=45)
 plt.legend()
 plt.tight_layout()
 plt.savefig('Session1_SalesTrends_AOV.pdf')
-plt.close
+plt.close()
 
 print(f"..{'Большой отступ':^20}..")
 
@@ -144,21 +146,7 @@ plt.xticks(rotation=45)
 plt.legend()
 plt.tight_layout()
 plt.savefig('Session1_ProductPerformance.pdf')
-plt.close
-
-plt.figure(figsize=(10, 5))
-plt.bar(by_category.index.astype(str), by_category['unit_margin'], color='green', label='Средняя маржа')
-plt.title('Средняя маржа по категориям', fontsize=20)
-plt.ylabel('Категория')
-plt.xlabel('Маржа')
-plt.grid('both', alpha=0.3)
-plt.xticks(rotation=45)
-plt.legend()
-plt.tight_layout()
-plt.savefig('Session1_ProductPerformance.pdf')
-plt.close
-
-
+plt.close()
 
 with PdfPages("Session1_CustomerAnalysis.pdf") as pdf1:
     df_customers['age_group'] = pd.cut(df_customers['age'], bins=[17, 24, 34, 44, 200], labels=['18-24', '25-34', '35-44', '45+'])

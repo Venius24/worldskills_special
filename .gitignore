@@ -1,3 +1,5 @@
 worldskills.py
 venv/
 self_world_skills.py
+__pycache__/
+*.py[cod]
